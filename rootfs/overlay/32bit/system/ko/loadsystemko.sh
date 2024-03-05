@@ -22,8 +22,9 @@ insmod /mnt/system/ko/soph_clock_cooling.ko
 insmod /mnt/system/ko/soph_tpu.ko
 insmod /mnt/system/ko/soph_vcodec.ko
 insmod /mnt/system/ko/soph_jpeg.ko
-insmod /mnt/system/ko/soph_vc_driver.ko
+insmod /mnt/system/ko/soph_vc_driver.ko MaxVencChnNum=9 MaxVdecChnNum=9
 #insmod /mnt/system/ko/soph_rtc.ko
+insmod /mnt/system/ko/soph_ive.ko
 
 echo 3 > /proc/sys/vm/drop_caches
 dmesg -n 4
