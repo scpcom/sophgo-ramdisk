@@ -96,13 +96,13 @@ echo "yes
 100%
 " | parted ---pretend-input-tty /dev/mmcblk0 "resizepart 2 100%"
 #e2fsck -fvp /dev/mmcblk0p2
-#resize2fs /dev/mmcblk0p2
+resize2fs /dev/mmcblk0p2
 mount -o rw /dev/mmcblk0p2 /realroot
 mfail="$?"
 
 if [ "${mfail}" -ne 0 ]
 then
-	#e2fsck -fvp /dev/mmcblk0p2
+	e2fsck -fvp /dev/mmcblk0p2
 	mount -o rw /dev/mmcblk0p2 /realroot
 	mfail="$?"
 	if [ "${mfail}" -ne 0 ]
